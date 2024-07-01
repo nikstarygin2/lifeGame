@@ -1,0 +1,1071 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ABB56C042C3178DF00592C0B /* PredefinedWorldItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB56C032C3178DF00592C0B /* PredefinedWorldItem.swift */; };
+		ABB56C082C318C3500592C0B /* libLifeGameModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD3B44D2C284A8F0089B63F /* libLifeGameModel.a */; };
+		ABD3B43C2C284A560089B63F /* LifeGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3B43B2C284A560089B63F /* LifeGameApp.swift */; };
+		ABD3B43E2C284A560089B63F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3B43D2C284A560089B63F /* ContentView.swift */; };
+		ABD3B4402C284A580089B63F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABD3B43F2C284A580089B63F /* Assets.xcassets */; };
+		ABD3B4432C284A580089B63F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABD3B4422C284A580089B63F /* Preview Assets.xcassets */; };
+		ABD3B4552C284AAC0089B63F /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3B4542C284AAC0089B63F /* World.swift */; };
+		ABD3B4572C284AD40089B63F /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3B4562C284AD40089B63F /* Cell.swift */; };
+		ABD3B46E2C284B4C0089B63F /* LifeGameUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD3B4682C284B4C0089B63F /* LifeGameUI.framework */; };
+		ABD3B46F2C284B4C0089B63F /* LifeGameUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ABD3B4682C284B4C0089B63F /* LifeGameUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ABD3B47A2C284B990089B63F /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3B4782C284B800089B63F /* SettingsScreen.swift */; };
+		ABD3B47B2C284B990089B63F /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3B4772C284B800089B63F /* GridView.swift */; };
+		ABD3B47C2C284B990089B63F /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3B4742C284B800089B63F /* GameView.swift */; };
+		ABD3B47D2C284B990089B63F /* GridData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3B4792C284B800089B63F /* GridData.swift */; };
+		ABD3B47E2C284B990089B63F /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3B4752C284B800089B63F /* GameScreen.swift */; };
+		ABD3B47F2C284B990089B63F /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3B4762C284B800089B63F /* Action.swift */; };
+		ABD3B4822C284BB30089B63F /* LifeGameWorldGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3B4812C284BAF0089B63F /* LifeGameWorldGenerator.swift */; };
+		ABD3B4832C284BB30089B63F /* LifeGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3B4802C284BAF0089B63F /* LifeGameViewModel.swift */; };
+		ABD3B4852C284BD40089B63F /* libLifeGameModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD3B44D2C284A8F0089B63F /* libLifeGameModel.a */; };
+		ABD3B4882C284BD40089B63F /* libLifeGameViewModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD3B45C2C284B370089B63F /* libLifeGameViewModel.a */; };
+		ABD3B48B2C284BD80089B63F /* libLifeGameModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD3B44D2C284A8F0089B63F /* libLifeGameModel.a */; };
+		ABD3B4952C284DCD0089B63F /* LifeGameRandomNumberFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3B4942C284DCD0089B63F /* LifeGameRandomNumberFetcher.swift */; };
+		ABD3B4992C284DF70089B63F /* libLifeGameModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD3B44D2C284A8F0089B63F /* libLifeGameModel.a */; };
+		ABD3B49C2C284DF70089B63F /* libLifeGameViewModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD3B45C2C284B370089B63F /* libLifeGameViewModel.a */; };
+		ABD3B49F2C284E230089B63F /* libLifeGameNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD3B4922C284DCD0089B63F /* libLifeGameNetworking.a */; };
+		ABD3B4B22C2859B50089B63F /* WorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3B4B02C2859B50089B63F /* WorldTests.swift */; };
+		ABD3B4B42C285A080089B63F /* CellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3B4B32C285A080089B63F /* CellTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ABB56C092C318C3500592C0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABD3B4302C284A560089B63F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABD3B44C2C284A8F0089B63F;
+			remoteInfo = LifeGameModel;
+		};
+		ABD3B46C2C284B4C0089B63F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABD3B4302C284A560089B63F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABD3B4672C284B4C0089B63F;
+			remoteInfo = LifeGameUI;
+		};
+		ABD3B4862C284BD40089B63F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABD3B4302C284A560089B63F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABD3B44C2C284A8F0089B63F;
+			remoteInfo = LifeGameModel;
+		};
+		ABD3B4892C284BD40089B63F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABD3B4302C284A560089B63F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABD3B45B2C284B370089B63F;
+			remoteInfo = LifeGameViewModel;
+		};
+		ABD3B48C2C284BD80089B63F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABD3B4302C284A560089B63F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABD3B44C2C284A8F0089B63F;
+			remoteInfo = LifeGameModel;
+		};
+		ABD3B49A2C284DF70089B63F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABD3B4302C284A560089B63F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABD3B44C2C284A8F0089B63F;
+			remoteInfo = LifeGameModel;
+		};
+		ABD3B49D2C284DF70089B63F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABD3B4302C284A560089B63F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABD3B45B2C284B370089B63F;
+			remoteInfo = LifeGameViewModel;
+		};
+		ABD3B4A02C284E230089B63F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABD3B4302C284A560089B63F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABD3B4912C284DCD0089B63F;
+			remoteInfo = LifeGameNetworking;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ABD3B44B2C284A8F0089B63F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABD3B45A2C284B370089B63F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABD3B4732C284B4C0089B63F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				ABD3B46F2C284B4C0089B63F /* LifeGameUI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABD3B4902C284DCD0089B63F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		ABB56C032C3178DF00592C0B /* PredefinedWorldItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredefinedWorldItem.swift; sourceTree = "<group>"; };
+		ABD3B4382C284A560089B63F /* LifeGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABD3B43B2C284A560089B63F /* LifeGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeGameApp.swift; sourceTree = "<group>"; };
+		ABD3B43D2C284A560089B63F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		ABD3B43F2C284A580089B63F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ABD3B4422C284A580089B63F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ABD3B44D2C284A8F0089B63F /* libLifeGameModel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLifeGameModel.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABD3B4542C284AAC0089B63F /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
+		ABD3B4562C284AD40089B63F /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		ABD3B45C2C284B370089B63F /* libLifeGameViewModel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLifeGameViewModel.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABD3B4682C284B4C0089B63F /* LifeGameUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LifeGameUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABD3B4742C284B800089B63F /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		ABD3B4752C284B800089B63F /* GameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreen.swift; sourceTree = "<group>"; };
+		ABD3B4762C284B800089B63F /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		ABD3B4772C284B800089B63F /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		ABD3B4782C284B800089B63F /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
+		ABD3B4792C284B800089B63F /* GridData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridData.swift; sourceTree = "<group>"; };
+		ABD3B4802C284BAF0089B63F /* LifeGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeGameViewModel.swift; sourceTree = "<group>"; };
+		ABD3B4812C284BAF0089B63F /* LifeGameWorldGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeGameWorldGenerator.swift; sourceTree = "<group>"; };
+		ABD3B4922C284DCD0089B63F /* libLifeGameNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLifeGameNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABD3B4942C284DCD0089B63F /* LifeGameRandomNumberFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeGameRandomNumberFetcher.swift; sourceTree = "<group>"; };
+		ABD3B4A62C2859890089B63F /* LifeGameModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LifeGameModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABD3B4B02C2859B50089B63F /* WorldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTests.swift; sourceTree = "<group>"; };
+		ABD3B4B32C285A080089B63F /* CellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ABD3B4352C284A560089B63F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABD3B46E2C284B4C0089B63F /* LifeGameUI.framework in Frameworks */,
+				ABD3B49F2C284E230089B63F /* libLifeGameNetworking.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABD3B44A2C284A8F0089B63F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABD3B4592C284B370089B63F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABD3B48B2C284BD80089B63F /* libLifeGameModel.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABD3B4652C284B4C0089B63F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABD3B4882C284BD40089B63F /* libLifeGameViewModel.a in Frameworks */,
+				ABD3B4852C284BD40089B63F /* libLifeGameModel.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABD3B48F2C284DCD0089B63F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABD3B49C2C284DF70089B63F /* libLifeGameViewModel.a in Frameworks */,
+				ABD3B4992C284DF70089B63F /* libLifeGameModel.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABD3B4A32C2859890089B63F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABB56C082C318C3500592C0B /* libLifeGameModel.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ABD3B42F2C284A560089B63F = {
+			isa = PBXGroup;
+			children = (
+				ABD3B43A2C284A560089B63F /* LifeGame */,
+				ABD3B44E2C284A8F0089B63F /* LifeGameModel */,
+				ABD3B45D2C284B370089B63F /* LifeGameViewModel */,
+				ABD3B4692C284B4C0089B63F /* LifeGameUI */,
+				ABD3B4932C284DCD0089B63F /* LifeGameNetworking */,
+				ABD3B4392C284A560089B63F /* Products */,
+				ABD3B4842C284BD40089B63F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		ABD3B4392C284A560089B63F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ABD3B4382C284A560089B63F /* LifeGame.app */,
+				ABD3B44D2C284A8F0089B63F /* libLifeGameModel.a */,
+				ABD3B45C2C284B370089B63F /* libLifeGameViewModel.a */,
+				ABD3B4682C284B4C0089B63F /* LifeGameUI.framework */,
+				ABD3B4922C284DCD0089B63F /* libLifeGameNetworking.a */,
+				ABD3B4A62C2859890089B63F /* LifeGameModelTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ABD3B43A2C284A560089B63F /* LifeGame */ = {
+			isa = PBXGroup;
+			children = (
+				ABD3B43B2C284A560089B63F /* LifeGameApp.swift */,
+				ABD3B43D2C284A560089B63F /* ContentView.swift */,
+				ABD3B43F2C284A580089B63F /* Assets.xcassets */,
+				ABD3B4412C284A580089B63F /* Preview Content */,
+			);
+			path = LifeGame;
+			sourceTree = "<group>";
+		};
+		ABD3B4412C284A580089B63F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				ABD3B4422C284A580089B63F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ABD3B44E2C284A8F0089B63F /* LifeGameModel */ = {
+			isa = PBXGroup;
+			children = (
+				ABD3B4AF2C2859990089B63F /* tests */,
+				ABD3B4542C284AAC0089B63F /* World.swift */,
+				ABD3B4562C284AD40089B63F /* Cell.swift */,
+			);
+			path = LifeGameModel;
+			sourceTree = "<group>";
+		};
+		ABD3B45D2C284B370089B63F /* LifeGameViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ABD3B4802C284BAF0089B63F /* LifeGameViewModel.swift */,
+				ABB56C032C3178DF00592C0B /* PredefinedWorldItem.swift */,
+				ABD3B4812C284BAF0089B63F /* LifeGameWorldGenerator.swift */,
+			);
+			path = LifeGameViewModel;
+			sourceTree = "<group>";
+		};
+		ABD3B4692C284B4C0089B63F /* LifeGameUI */ = {
+			isa = PBXGroup;
+			children = (
+				ABD3B4742C284B800089B63F /* GameView.swift */,
+				ABD3B4752C284B800089B63F /* GameScreen.swift */,
+				ABD3B4762C284B800089B63F /* Action.swift */,
+				ABD3B4772C284B800089B63F /* GridView.swift */,
+				ABD3B4782C284B800089B63F /* SettingsScreen.swift */,
+				ABD3B4792C284B800089B63F /* GridData.swift */,
+			);
+			path = LifeGameUI;
+			sourceTree = "<group>";
+		};
+		ABD3B4842C284BD40089B63F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ABD3B4932C284DCD0089B63F /* LifeGameNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				ABD3B4942C284DCD0089B63F /* LifeGameRandomNumberFetcher.swift */,
+			);
+			path = LifeGameNetworking;
+			sourceTree = "<group>";
+		};
+		ABD3B4AF2C2859990089B63F /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				ABD3B4B02C2859B50089B63F /* WorldTests.swift */,
+				ABD3B4B32C285A080089B63F /* CellTests.swift */,
+			);
+			path = tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		ABD3B4632C284B4C0089B63F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		ABD3B4372C284A560089B63F /* LifeGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABD3B4462C284A580089B63F /* Build configuration list for PBXNativeTarget "LifeGame" */;
+			buildPhases = (
+				ABD3B4342C284A560089B63F /* Sources */,
+				ABD3B4352C284A560089B63F /* Frameworks */,
+				ABD3B4362C284A560089B63F /* Resources */,
+				ABD3B4732C284B4C0089B63F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABD3B46D2C284B4C0089B63F /* PBXTargetDependency */,
+				ABD3B4A12C284E230089B63F /* PBXTargetDependency */,
+			);
+			name = LifeGame;
+			productName = LifeGame;
+			productReference = ABD3B4382C284A560089B63F /* LifeGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ABD3B44C2C284A8F0089B63F /* LifeGameModel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABD3B4512C284A8F0089B63F /* Build configuration list for PBXNativeTarget "LifeGameModel" */;
+			buildPhases = (
+				ABD3B4492C284A8F0089B63F /* Sources */,
+				ABD3B44A2C284A8F0089B63F /* Frameworks */,
+				ABD3B44B2C284A8F0089B63F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LifeGameModel;
+			productName = LifeGameModel;
+			productReference = ABD3B44D2C284A8F0089B63F /* libLifeGameModel.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		ABD3B45B2C284B370089B63F /* LifeGameViewModel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABD3B4602C284B370089B63F /* Build configuration list for PBXNativeTarget "LifeGameViewModel" */;
+			buildPhases = (
+				ABD3B4582C284B370089B63F /* Sources */,
+				ABD3B4592C284B370089B63F /* Frameworks */,
+				ABD3B45A2C284B370089B63F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABD3B48D2C284BD80089B63F /* PBXTargetDependency */,
+			);
+			name = LifeGameViewModel;
+			productName = LifeGameViewModel;
+			productReference = ABD3B45C2C284B370089B63F /* libLifeGameViewModel.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		ABD3B4672C284B4C0089B63F /* LifeGameUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABD3B4702C284B4C0089B63F /* Build configuration list for PBXNativeTarget "LifeGameUI" */;
+			buildPhases = (
+				ABD3B4632C284B4C0089B63F /* Headers */,
+				ABD3B4642C284B4C0089B63F /* Sources */,
+				ABD3B4652C284B4C0089B63F /* Frameworks */,
+				ABD3B4662C284B4C0089B63F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABD3B4872C284BD40089B63F /* PBXTargetDependency */,
+				ABD3B48A2C284BD40089B63F /* PBXTargetDependency */,
+			);
+			name = LifeGameUI;
+			productName = LifeGameUI;
+			productReference = ABD3B4682C284B4C0089B63F /* LifeGameUI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		ABD3B4912C284DCD0089B63F /* LifeGameNetworking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABD3B4962C284DCD0089B63F /* Build configuration list for PBXNativeTarget "LifeGameNetworking" */;
+			buildPhases = (
+				ABD3B48E2C284DCD0089B63F /* Sources */,
+				ABD3B48F2C284DCD0089B63F /* Frameworks */,
+				ABD3B4902C284DCD0089B63F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABD3B49B2C284DF70089B63F /* PBXTargetDependency */,
+				ABD3B49E2C284DF70089B63F /* PBXTargetDependency */,
+			);
+			name = LifeGameNetworking;
+			productName = LifeGameNetworking;
+			productReference = ABD3B4922C284DCD0089B63F /* libLifeGameNetworking.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		ABD3B4A52C2859890089B63F /* LifeGameModelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABD3B4AC2C2859890089B63F /* Build configuration list for PBXNativeTarget "LifeGameModelTests" */;
+			buildPhases = (
+				ABD3B4A22C2859890089B63F /* Sources */,
+				ABD3B4A32C2859890089B63F /* Frameworks */,
+				ABD3B4A42C2859890089B63F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABB56C0A2C318C3500592C0B /* PBXTargetDependency */,
+			);
+			name = LifeGameModelTests;
+			productName = LifeGameModelTests;
+			productReference = ABD3B4A62C2859890089B63F /* LifeGameModelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ABD3B4302C284A560089B63F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					ABD3B4372C284A560089B63F = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					ABD3B44C2C284A8F0089B63F = {
+						CreatedOnToolsVersion = 16.0;
+						LastSwiftMigration = 1600;
+					};
+					ABD3B45B2C284B370089B63F = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					ABD3B4672C284B4C0089B63F = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					ABD3B4912C284DCD0089B63F = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					ABD3B4A52C2859890089B63F = {
+						CreatedOnToolsVersion = 16.0;
+						LastSwiftMigration = 1600;
+					};
+				};
+			};
+			buildConfigurationList = ABD3B4332C284A560089B63F /* Build configuration list for PBXProject "LifeGame" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ABD3B42F2C284A560089B63F;
+			productRefGroup = ABD3B4392C284A560089B63F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ABD3B4372C284A560089B63F /* LifeGame */,
+				ABD3B44C2C284A8F0089B63F /* LifeGameModel */,
+				ABD3B45B2C284B370089B63F /* LifeGameViewModel */,
+				ABD3B4672C284B4C0089B63F /* LifeGameUI */,
+				ABD3B4912C284DCD0089B63F /* LifeGameNetworking */,
+				ABD3B4A52C2859890089B63F /* LifeGameModelTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ABD3B4362C284A560089B63F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABD3B4432C284A580089B63F /* Preview Assets.xcassets in Resources */,
+				ABD3B4402C284A580089B63F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABD3B4662C284B4C0089B63F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABD3B4A42C2859890089B63F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ABD3B4342C284A560089B63F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABD3B43E2C284A560089B63F /* ContentView.swift in Sources */,
+				ABD3B43C2C284A560089B63F /* LifeGameApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABD3B4492C284A8F0089B63F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABD3B4552C284AAC0089B63F /* World.swift in Sources */,
+				ABD3B4572C284AD40089B63F /* Cell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABD3B4582C284B370089B63F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABD3B4822C284BB30089B63F /* LifeGameWorldGenerator.swift in Sources */,
+				ABB56C042C3178DF00592C0B /* PredefinedWorldItem.swift in Sources */,
+				ABD3B4832C284BB30089B63F /* LifeGameViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABD3B4642C284B4C0089B63F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABD3B47A2C284B990089B63F /* SettingsScreen.swift in Sources */,
+				ABD3B47B2C284B990089B63F /* GridView.swift in Sources */,
+				ABD3B47C2C284B990089B63F /* GameView.swift in Sources */,
+				ABD3B47D2C284B990089B63F /* GridData.swift in Sources */,
+				ABD3B47E2C284B990089B63F /* GameScreen.swift in Sources */,
+				ABD3B47F2C284B990089B63F /* Action.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABD3B48E2C284DCD0089B63F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABD3B4952C284DCD0089B63F /* LifeGameRandomNumberFetcher.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABD3B4A22C2859890089B63F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABD3B4B22C2859B50089B63F /* WorldTests.swift in Sources */,
+				ABD3B4B42C285A080089B63F /* CellTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ABB56C0A2C318C3500592C0B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABD3B44C2C284A8F0089B63F /* LifeGameModel */;
+			targetProxy = ABB56C092C318C3500592C0B /* PBXContainerItemProxy */;
+		};
+		ABD3B46D2C284B4C0089B63F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABD3B4672C284B4C0089B63F /* LifeGameUI */;
+			targetProxy = ABD3B46C2C284B4C0089B63F /* PBXContainerItemProxy */;
+		};
+		ABD3B4872C284BD40089B63F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABD3B44C2C284A8F0089B63F /* LifeGameModel */;
+			targetProxy = ABD3B4862C284BD40089B63F /* PBXContainerItemProxy */;
+		};
+		ABD3B48A2C284BD40089B63F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABD3B45B2C284B370089B63F /* LifeGameViewModel */;
+			targetProxy = ABD3B4892C284BD40089B63F /* PBXContainerItemProxy */;
+		};
+		ABD3B48D2C284BD80089B63F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABD3B44C2C284A8F0089B63F /* LifeGameModel */;
+			targetProxy = ABD3B48C2C284BD80089B63F /* PBXContainerItemProxy */;
+		};
+		ABD3B49B2C284DF70089B63F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABD3B44C2C284A8F0089B63F /* LifeGameModel */;
+			targetProxy = ABD3B49A2C284DF70089B63F /* PBXContainerItemProxy */;
+		};
+		ABD3B49E2C284DF70089B63F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABD3B45B2C284B370089B63F /* LifeGameViewModel */;
+			targetProxy = ABD3B49D2C284DF70089B63F /* PBXContainerItemProxy */;
+		};
+		ABD3B4A12C284E230089B63F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABD3B4912C284DCD0089B63F /* LifeGameNetworking */;
+			targetProxy = ABD3B4A02C284E230089B63F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		ABD3B4442C284A580089B63F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				_EXPERIMENTAL_SWIFT_EXPLICIT_MODULES = YES;
+			};
+			name = Debug;
+		};
+		ABD3B4452C284A580089B63F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				_EXPERIMENTAL_SWIFT_EXPLICIT_MODULES = YES;
+			};
+			name = Release;
+		};
+		ABD3B4472C284A580089B63F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LifeGame/Preview Content\"";
+				DEVELOPMENT_TEAM = 4656S32JXN;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nikstarygin.shmr.LifeGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ABD3B4482C284A580089B63F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LifeGame/Preview Content\"";
+				DEVELOPMENT_TEAM = 4656S32JXN;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nikstarygin.shmr.LifeGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		ABD3B4522C284A8F0089B63F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4656S32JXN;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ABD3B4532C284A8F0089B63F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4656S32JXN;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		ABD3B4612C284B370089B63F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4656S32JXN;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ABD3B4622C284B370089B63F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4656S32JXN;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		ABD3B4712C284B4C0089B63F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = NO;
+				DEVELOPMENT_TEAM = 4656S32JXN;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = nikstarygin.shmr.LifeGameUI;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		ABD3B4722C284B4C0089B63F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = NO;
+				DEVELOPMENT_TEAM = 4656S32JXN;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = nikstarygin.shmr.LifeGameUI;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ABD3B4972C284DCD0089B63F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4656S32JXN;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ABD3B4982C284DCD0089B63F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4656S32JXN;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		ABD3B4AD2C2859890089B63F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4656S32JXN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nikstarygin.shmr.LifeGameModelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ABD3B4AE2C2859890089B63F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4656S32JXN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nikstarygin.shmr.LifeGameModelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ABD3B4332C284A560089B63F /* Build configuration list for PBXProject "LifeGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABD3B4442C284A580089B63F /* Debug */,
+				ABD3B4452C284A580089B63F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABD3B4462C284A580089B63F /* Build configuration list for PBXNativeTarget "LifeGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABD3B4472C284A580089B63F /* Debug */,
+				ABD3B4482C284A580089B63F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABD3B4512C284A8F0089B63F /* Build configuration list for PBXNativeTarget "LifeGameModel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABD3B4522C284A8F0089B63F /* Debug */,
+				ABD3B4532C284A8F0089B63F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABD3B4602C284B370089B63F /* Build configuration list for PBXNativeTarget "LifeGameViewModel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABD3B4612C284B370089B63F /* Debug */,
+				ABD3B4622C284B370089B63F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABD3B4702C284B4C0089B63F /* Build configuration list for PBXNativeTarget "LifeGameUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABD3B4712C284B4C0089B63F /* Debug */,
+				ABD3B4722C284B4C0089B63F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABD3B4962C284DCD0089B63F /* Build configuration list for PBXNativeTarget "LifeGameNetworking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABD3B4972C284DCD0089B63F /* Debug */,
+				ABD3B4982C284DCD0089B63F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABD3B4AC2C2859890089B63F /* Build configuration list for PBXNativeTarget "LifeGameModelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABD3B4AD2C2859890089B63F /* Debug */,
+				ABD3B4AE2C2859890089B63F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ABD3B4302C284A560089B63F /* Project object */;
+}
