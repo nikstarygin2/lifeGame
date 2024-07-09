@@ -6,6 +6,7 @@ import SwiftUI
 
 public import LifeGameViewModel
 import LifeGameModel
+internal import LifeGameUITestsSupport
 
 public struct SettingsScreen: View {
     @State private var columnsCount: Int
@@ -16,6 +17,7 @@ public struct SettingsScreen: View {
 
     @State private var isGameRunning = false
     @State private var isRandomGame = true
+    @State private var isLoopModeEnabled = false
 
     public init(
         columnsCount: Int,
@@ -58,13 +60,14 @@ public struct SettingsScreen: View {
                         Text("Columns")
                             .font(.headline)
                         Spacer()
-                        Stepper(value: $columnsCount, in: 0...10) {
+                        Stepper(value: $columnsCount, in: 1...10) {
                             Text("\(columnsCount)")
                                 .font(.headline)
                                 .foregroundColor(.black)
                                 .frame(width: 20)
                         }
                         .frame(width: 120)
+                        .accessibilityIdentifier(LifeGameA11yIds.Settings.columnsStepper)
                     }
                     .settingsBackground()
 
@@ -72,12 +75,13 @@ public struct SettingsScreen: View {
                         Text("Rows")
                             .font(.headline)
                         Spacer()
-                        Stepper(value: $rowsCount, in: 0...10) {
+                        Stepper(value: $rowsCount, in: 1...10) {
                             Text("\(rowsCount)")
                                 .font(.headline)
                                 .foregroundColor(.black)
                                 .frame(width: 20)
                         }
+                        .accessibilityIdentifier(LifeGameA11yIds.Settings.rowsStepper)
                         .frame(width: 120)
                     }
                     .settingsBackground()
@@ -114,7 +118,18 @@ public struct SettingsScreen: View {
                     Spacer()
                     Toggle(isOn: $isAutoGame) {}
                         .labelsHidden()
+                        .accessibilityIdentifier(LifeGameA11yIds.Settings.autoGame)
                 }
+
+                Divider()
+
+                        HStack {
+                            Text("Loop mode")
+                                .font(.headline)
+                            Spacer()
+                            Toggle(isOn: $isLoopModeEnabled) {}
+                                .labelsHidden()
+                        }
 
             }.settingsBackground()
 
@@ -129,6 +144,7 @@ public struct SettingsScreen: View {
                     .background(Color.blue)
                     .cornerRadius(10)
             }
+            .accessibilityIdentifier(LifeGameA11yIds.Settings.startGame)
             Spacer()
         }
         .padding()
@@ -138,7 +154,8 @@ public struct SettingsScreen: View {
                     rowsCount: rowsCount,
                     columnCount: columnsCount,
                     isAutoGame: isAutoGame,
-                    worldGenerator: worldGenerator
+                    worldGenerator: worldGenerator,
+                    isLoopModeEnabled: isLoopModeEnabled
                 )
             } else {
                 GameScreen(
@@ -149,7 +166,8 @@ public struct SettingsScreen: View {
                         .map(\.worlds)
                         .flatMap { $0 }
                         .first(where: \.isChecked)
-                        .map(\.worldGenerator)!
+                        .map(\.worldGenerator)!,
+                    isLoopModeEnabled: isLoopModeEnabled
                 )
             }
         }
