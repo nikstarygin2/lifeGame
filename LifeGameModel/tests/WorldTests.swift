@@ -7,7 +7,7 @@ import XCTest
 @testable import LifeGameModel
 
 final class WorldTests: XCTestCase {
-    func testWorldNeighbors() {
+    func test_CalculateCellsNeighbors_InWorld() {
         let world = World(columns: 3, rows: 3)
         let neighbours = world.neighbours(for: Cell(row: 0, column: 0))
 

@@ -33,7 +33,6 @@
 		ABD3B49C2C284DF70089B63F /* libLifeGameViewModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD3B45C2C284B370089B63F /* libLifeGameViewModel.a */; };
 		ABD3B49F2C284E230089B63F /* libLifeGameNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD3B4922C284DCD0089B63F /* libLifeGameNetworking.a */; };
 		ABD3B4B22C2859B50089B63F /* WorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3B4B02C2859B50089B63F /* WorldTests.swift */; };
-		ABD3B4B42C285A080089B63F /* CellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3B4B32C285A080089B63F /* CellTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,7 +159,6 @@
 		ABD3B4942C284DCD0089B63F /* LifeGameRandomNumberFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeGameRandomNumberFetcher.swift; sourceTree = "<group>"; };
 		ABD3B4A62C2859890089B63F /* LifeGameModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LifeGameModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD3B4B02C2859B50089B63F /* WorldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTests.swift; sourceTree = "<group>"; };
-		ABD3B4B32C285A080089B63F /* CellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,7 +312,6 @@
 			isa = PBXGroup;
 			children = (
 				ABD3B4B02C2859B50089B63F /* WorldTests.swift */,
-				ABD3B4B32C285A080089B63F /* CellTests.swift */,
 			);
 			path = tests;
 			sourceTree = "<group>";
@@ -580,7 +577,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABD3B4B22C2859B50089B63F /* WorldTests.swift in Sources */,
-				ABD3B4B42C285A080089B63F /* CellTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

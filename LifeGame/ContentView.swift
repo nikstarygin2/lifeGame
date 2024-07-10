@@ -12,8 +12,8 @@ import LifeGameModel
 struct ContentView: View {
     var body: some View {
         SettingsScreen(
-            columnsCount: 0,
-            rowsCount: 0,
+            columnsCount: 1,
+            rowsCount: 1,
             worldGenerator: LifeGameRandomNumberFetcher(),
             isAutoGame: false,
             predefinedWorlds: [
