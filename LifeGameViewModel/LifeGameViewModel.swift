@@ -13,13 +13,8 @@ public final class LifeViewModel {
     private let columns: Int
     private let world: World
     private var timer: Timer?
-    public var generationCounter: Int
 
-    public var gridData: [[Bool]] {
-        didSet {
-            generationCounter = world.generationCounter
-        }
-    }
+    public var gridData: [[Bool]]
 
     public func startGame() {
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
@@ -46,11 +41,10 @@ public final class LifeViewModel {
         }
     }
 
-    public init(rows: Int, columns: Int, isLoopModeEnabled: Bool) {
+    public init(rows: Int, columns: Int) {
         self.rows = rows
         self.columns = columns
-        self.world = try! World(columns: columns, rows: rows, mode: isLoopModeEnabled ? .loop : .simple)
+        self.world = World(columns: columns, rows: rows)
         self.gridData = Array(repeating: Array(repeating: false, count: columns), count: rows)
-        self.generationCounter = world.generationCounter
     }
 }
