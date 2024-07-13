@@ -4,29 +4,29 @@
 
 import SwiftUI
 
-public import LifeGameViewModel
+import LifeGameViewModel
 import LifeGameModel
 
 public struct GameScreen: View {
     @State private var viewModel: LifeViewModel
     @State private var isAutoGame: Bool
     @State var rowsCount: Int
-    @State var columnCount: Int
-    private let worldGenerator: LifeGameWorldGenerator
+    @State var columnsCount: Int
+    private let aliveCellsGenerator: LifeGameAliveCellsGenerator
 
     public init(
         rowsCount:Int,
-        columnCount: Int,
+        columnsCount: Int,
         isAutoGame: Bool,
-        worldGenerator: LifeGameWorldGenerator
+        aliveCellsGenerator: LifeGameAliveCellsGenerator
     ) {
         self.isAutoGame = isAutoGame
         self.rowsCount = rowsCount
-        self.columnCount = columnCount
-        self.worldGenerator = worldGenerator
+        self.columnsCount = columnsCount
+        self.aliveCellsGenerator = aliveCellsGenerator
         self.viewModel = LifeViewModel(
             rows: rowsCount,
-            columns: columnCount
+            columns: columnsCount
         )
     }
 
@@ -38,24 +38,24 @@ public struct GameScreen: View {
             restartAction: {
                 viewModel = LifeViewModel(
                     rows: rowsCount,
-                    columns: columnCount
+                    columns: columnsCount
                 )
-                worldGenerator.generate(
-                    column: columnCount,
-                    rows: rowsCount,
-                    count: columnCount * rowsCount / 2
+                aliveCellsGenerator.generate(
+                    column: columnsCount,
+                    rows: rowsCount
                 ) {
                     viewModel.setCells($0)
                     if isAutoGame {
                         viewModel.startGame()
                     }
                 }
-            }
+            },
+            columnsCount: columnsCount,
+            rowsCount: rowsCount
         ).onAppear {
-            worldGenerator.generate(
-                column: columnCount,
-                rows: rowsCount,
-                count: columnCount * rowsCount / 2
+            aliveCellsGenerator.generate(
+                column: columnsCount,
+                rows: rowsCount
             ) {
                 viewModel.setCells($0)
                 if isAutoGame {

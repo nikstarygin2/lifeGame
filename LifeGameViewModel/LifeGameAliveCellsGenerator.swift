@@ -1,14 +1,13 @@
 //
-//  LifeGameWorldGenerator.swift
+//  LifeGameAliveCellsGenerator.swift
 //  LifeGameViewModel
 
 import LifeGameModel
 
-public protocol LifeGameWorldGenerator {
+public protocol LifeGameAliveCellsGenerator {
     func generate(
         column: Int,
         rows: Int,
-        count: Int,
         completion: @escaping (Set<Cell>) -> Void
     )
 }

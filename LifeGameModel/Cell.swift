@@ -12,7 +12,8 @@ public struct Cell: Hashable {
         self.row = row
         self.column = column
     }
-
+    
+    // Метод для подсчета набора клеток вокруг текущей клетки
     func neighbours() -> Set<Cell> {
         var neighbours = Set<Cell>()
         for row in -1...1 {

@@ -14,7 +14,7 @@ public final class LifeViewModel {
     private let world: World
     private var timer: Timer?
 
-    public var gridData: [[Bool]]
+    public var gridData: [[Bool]]?
 
     public func startGame() {
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
@@ -36,15 +36,16 @@ public final class LifeViewModel {
 
     public func setCells(_ cells: Set<Cell>) {
         world.add(cells)
+        var gridData = Array(repeating: Array(repeating: false, count: columns), count: rows)
         for cell in world.aliveCells {
             gridData[cell.row][cell.column] = true
         }
+        self.gridData = gridData
     }
 
     public init(rows: Int, columns: Int) {
         self.rows = rows
         self.columns = columns
         self.world = World(columns: columns, rows: rows)
-        self.gridData = Array(repeating: Array(repeating: false, count: columns), count: rows)
     }
 }

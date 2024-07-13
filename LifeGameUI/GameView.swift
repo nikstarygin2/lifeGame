@@ -4,24 +4,30 @@
 
 import SwiftUI
 
-internal import LifeGameViewModel
+import LifeGameViewModel
 
 struct GameView: View {
-    @Binding private var gridData: GridData
+    @Binding private var gridData: GridData?
     @Binding private var isAutoGame: Bool
     private let nextGenAction: Action
     private let restartAction: Action
+    private let columnsCount: Int
+    private let rowsCount: Int
 
     init(
-        gridData: Binding<GridData>,
+        gridData: Binding<GridData?>,
         isAutoGame: Binding<Bool>,
         nextGenAction: @escaping Action,
-        restartAction: @escaping Action
+        restartAction: @escaping Action,
+        columnsCount: Int,
+        rowsCount: Int
     ) {
         _gridData = gridData
         _isAutoGame = isAutoGame
         self.nextGenAction = nextGenAction
         self.restartAction = restartAction
+        self.columnsCount = columnsCount
+        self.rowsCount = rowsCount
     }
 
     var body: some View {
@@ -31,12 +37,17 @@ struct GameView: View {
 
             VStack {
                 Spacer()
-                GridView(data: $gridData)
+                GridView(
+                    data: $gridData,
+                    columnsCount: columnsCount,
+                    rowsCount: rowsCount
+                )
                 Spacer()
                 if !isAutoGame {
                     VStack(spacing: 20) {
                         Button("Next Gen", action: nextGenAction)
                             .lifeGameUIButton()
+                            .disabled(gridData == nil)
                     }
                 }
                 Button("Restart", action: restartAction)
@@ -101,6 +112,8 @@ fileprivate extension Color {
         ]),
         isAutoGame: .constant(false),
         nextGenAction: {},
-        restartAction: {}
+        restartAction: {},
+        columnsCount: 3,
+        rowsCount: 3
     )
 }

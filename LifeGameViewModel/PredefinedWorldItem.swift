@@ -8,13 +8,20 @@ import Foundation
 public struct PredefinedWorldsItem: Identifiable {
     public struct PredefinedWorld: Identifiable {
         public let title: String
-        public let worldGenerator: LifeGameWorldGenerator
+        public let aliveCellsGenerator: LifeGameAliveCellsGenerator
+        public let size: Int
         public var isChecked: Bool
         public let id = UUID()
 
-        public init(title: String, worldGenerator: LifeGameWorldGenerator, isChecked: Bool) {
+        public init(
+            title: String,
+            aliveCellsGenerator: LifeGameAliveCellsGenerator,
+            size: Int,
+            isChecked: Bool
+        ) {
             self.title = title
-            self.worldGenerator = worldGenerator
+            self.aliveCellsGenerator = aliveCellsGenerator
+            self.size = size
             self.isChecked = isChecked
         }
     }

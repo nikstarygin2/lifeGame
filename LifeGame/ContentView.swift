@@ -14,7 +14,7 @@ struct ContentView: View {
         SettingsScreen(
             columnsCount: 1,
             rowsCount: 1,
-            worldGenerator: LifeGameRandomNumberFetcher(),
+            aliveCellsGenerator: LifeGameRandomAliveCellsFetcher(),
             isAutoGame: false,
             predefinedWorlds: [
                 PredefinedWorldsItem(
@@ -22,12 +22,14 @@ struct ContentView: View {
                     worlds: [
                         .init(
                             title: "Block",
-                            worldGenerator: Block(),
+                            aliveCellsGenerator: Block(),
+                            size: 5,
                             isChecked: true
                         ),
                         .init(
                             title: "Hive",
-                            worldGenerator: Hive(),
+                            aliveCellsGenerator: Hive(),
+                            size: 8,
                             isChecked: false
                         ),
                     ]
@@ -37,12 +39,14 @@ struct ContentView: View {
                     worlds: [
                         .init(
                             title: "Semaphore",
-                            worldGenerator: Semaphore(),
+                            aliveCellsGenerator: Semaphore(),
+                            size: 5,
                             isChecked: false
                         ),
                         .init(
                             title: "Pulsar",
-                            worldGenerator: Pulsar(),
+                            aliveCellsGenerator: Pulsar(),
+                            size: 18,
                             isChecked: false
                         ),
                     ]
@@ -52,12 +56,14 @@ struct ContentView: View {
                     worlds: [
                         .init(
                             title: "Glider",
-                            worldGenerator: Glider(),
+                            aliveCellsGenerator: Glider(),
+                            size: 10,
                             isChecked: false
                         ),
                         .init(
                             title: "LWSS",
-                            worldGenerator: LWSS(),
+                            aliveCellsGenerator: LWSS(),
+                            size: 18,
                             isChecked: false
                         ),
                     ]
@@ -71,8 +77,8 @@ struct ContentView: View {
     ContentView()
 }
 
-private struct Block: LifeGameWorldGenerator {
-    func generate(column: Int, rows: Int, count: Int, completion: @escaping (Set<Cell>) -> Void) {
+private struct Block: LifeGameAliveCellsGenerator {
+    func generate(column: Int, rows: Int, completion: @escaping (Set<Cell>) -> Void) {
         let block: Set<Cell> = [
             .init(row: 1, column: 1),
             .init(row: 1, column: 2),
@@ -83,8 +89,8 @@ private struct Block: LifeGameWorldGenerator {
     }
 }
 
-private struct Hive: LifeGameWorldGenerator {
-    func generate(column: Int, rows: Int, count: Int, completion: @escaping (Set<Cell>) -> Void) {
+private struct Hive: LifeGameAliveCellsGenerator {
+    func generate(column: Int, rows: Int, completion: @escaping (Set<Cell>) -> Void) {
         let hive: Set<Cell> = [
             .init(row: 3, column: 3),
             .init(row: 3, column: 4),
@@ -97,19 +103,19 @@ private struct Hive: LifeGameWorldGenerator {
     }
 }
 
-private struct Semaphore: LifeGameWorldGenerator {
-    func generate(column: Int, rows: Int, count: Int, completion: @escaping (Set<Cell>) -> Void) {
+private struct Semaphore: LifeGameAliveCellsGenerator {
+    func generate(column: Int, rows: Int, completion: @escaping (Set<Cell>) -> Void) {
         let semahpore: Set<Cell> = [
-            .init(row: 2, column: 3),
-            .init(row: 3, column: 3),
-            .init(row: 4, column: 3),
+            .init(row: 1, column: 2),
+            .init(row: 2, column: 2),
+            .init(row: 3, column: 2),
         ]
         completion(semahpore)
     }
 }
 
-private struct Pulsar: LifeGameWorldGenerator {
-    func generate(column: Int, rows: Int, count: Int, completion: @escaping (Set<Cell>) -> Void) {
+private struct Pulsar: LifeGameAliveCellsGenerator {
+    func generate(column: Int, rows: Int, completion: @escaping (Set<Cell>) -> Void) {
         let pulsar: Set<Cell> = [
             // Верхняя левая группа
             Cell(row: 2, column: 4), Cell(row: 2, column: 5), Cell(row: 2, column: 6),
@@ -144,8 +150,8 @@ private struct Pulsar: LifeGameWorldGenerator {
     }
 }
 
-private struct Glider: LifeGameWorldGenerator {
-    func generate(column: Int, rows: Int, count: Int, completion: @escaping (Set<Cell>) -> Void) {
+private struct Glider: LifeGameAliveCellsGenerator {
+    func generate(column: Int, rows: Int, completion: @escaping (Set<Cell>) -> Void) {
         let glider: Set<Cell> = [
             .init(row: 1, column: 0),
             .init(row: 2, column: 1),
@@ -157,8 +163,8 @@ private struct Glider: LifeGameWorldGenerator {
     }
 }
 
-private struct LWSS: LifeGameWorldGenerator {
-    func generate(column: Int, rows: Int, count: Int, completion: @escaping (Set<Cell>) -> Void) {
+private struct LWSS: LifeGameAliveCellsGenerator {
+    func generate(column: Int, rows: Int, completion: @escaping (Set<Cell>) -> Void) {
         let lwss: Set<Cell> = [
             Cell(row: 6, column: 7),
             Cell(row: 6, column: 10),

@@ -7,10 +7,14 @@ import XCTest
 @testable import LifeGameModel
 
 final class WorldTests: XCTestCase {
-    func test_CalculateCellsNeighbors_InWorld() {
+    func test_CalculateCellsNeighbors() {
+        // Arrange
         let world = World(columns: 3, rows: 3)
-        let neighbours = world.neighbours(for: Cell(row: 0, column: 0))
 
+        // Act
+        let neighbours = world.calculateNeighbours(for: Cell(row: 0, column: 0))
+        
+        // Assert
         XCTAssertEqual(neighbours.count, 3)
 
         XCTAssertTrue(neighbours.contains(Cell(row: 0, column: 1)))

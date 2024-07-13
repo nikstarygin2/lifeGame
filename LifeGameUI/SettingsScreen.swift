@@ -4,7 +4,7 @@
 
 import SwiftUI
 
-public import LifeGameViewModel
+import LifeGameViewModel
 import LifeGameModel
 
 public struct SettingsScreen: View {
@@ -12,7 +12,7 @@ public struct SettingsScreen: View {
     @State private var rowsCount: Int
     @State private var isAutoGame: Bool
     @State private var predefinedWorlds: [PredefinedWorldsItem]
-    private let worldGenerator: LifeGameWorldGenerator
+    private let aliveCellsGenerator: LifeGameAliveCellsGenerator
 
     @State private var isGameRunning = false
     @State private var isRandomGame = true
@@ -20,14 +20,14 @@ public struct SettingsScreen: View {
     public init(
         columnsCount: Int,
         rowsCount: Int,
-        worldGenerator: LifeGameWorldGenerator,
+        aliveCellsGenerator: LifeGameAliveCellsGenerator,
         isAutoGame: Bool,
         predefinedWorlds: [PredefinedWorldsItem]
     ) {
         self.columnsCount = columnsCount
         self.rowsCount = rowsCount
         self.isAutoGame = isAutoGame
-        self.worldGenerator = worldGenerator
+        self.aliveCellsGenerator = aliveCellsGenerator
         self.predefinedWorlds = predefinedWorlds
     }
 
@@ -136,23 +136,26 @@ public struct SettingsScreen: View {
             if isRandomGame {
                 GameScreen(
                     rowsCount: rowsCount,
-                    columnCount: columnsCount,
+                    columnsCount: columnsCount,
                     isAutoGame: isAutoGame,
-                    worldGenerator: worldGenerator
+                    aliveCellsGenerator: aliveCellsGenerator
                 )
             } else {
                 GameScreen(
-                    rowsCount: 18,
-                    columnCount: 18,
+                    rowsCount: selectedWorld.size,
+                    columnsCount: selectedWorld.size,
                     isAutoGame: isAutoGame,
-                    worldGenerator: predefinedWorlds
-                        .map(\.worlds)
-                        .flatMap { $0 }
-                        .first(where: \.isChecked)
-                        .map(\.worldGenerator)!
+                    aliveCellsGenerator: selectedWorld.aliveCellsGenerator
                 )
             }
         }
+    }
+
+    private var selectedWorld: PredefinedWorldsItem.PredefinedWorld {
+        predefinedWorlds
+            .map(\.worlds)
+            .flatMap { $0 }
+            .first(where: \.isChecked)!
     }
 
     private func selectItem(_ id: UUID) {
@@ -185,17 +188,16 @@ fileprivate extension View {
     SettingsScreen(
         columnsCount: 5,
         rowsCount: 5,
-        worldGenerator: MockLifeGameWorldGenerator(),
+        aliveCellsGenerator: MockLifeGameAliveCellsGenerator(),
         isAutoGame: false,
         predefinedWorlds: []
     )
 }
 
-private struct MockLifeGameWorldGenerator: LifeGameWorldGenerator {
+private struct MockLifeGameAliveCellsGenerator: LifeGameAliveCellsGenerator {
     func generate(
         column: Int,
         rows: Int,
-        count: Int,
         completion: @escaping (Set<LifeGameModel.Cell>) -> Void
     ) {
         var cells: Set<Cell> = Set()

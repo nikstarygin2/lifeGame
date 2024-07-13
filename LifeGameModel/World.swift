@@ -5,8 +5,8 @@
 import Foundation
 
 public final class World {
-    public let rows: Int
-    public let columns: Int
+    private let rows: Int
+    private let columns: Int
     public private(set) var aliveCells: Set<Cell> = []
 
     public init(
@@ -17,15 +17,18 @@ public final class World {
         self.rows = rows
     }
 
+    // Метод для добавления живых клеток в "мир"
     public func add(_ cells: Set<Cell>) {
-        aliveCells.formUnion(cells.filter(isWordContainCell))
+        aliveCells.formUnion(cells.filter(isWorldContainCell))
     }
 
     public func nextGeneration() {
-        var cellsWithNeighbours = cellsWithNeighbours()
+        var cellsWithNeighbours = calculateCellsWithAliveNeighbours()
+        // Создаем новый пустой набор клеток
         var newCells: Set<Cell> = []
 
-        // если у живой клетки есть две или три живые соседки, то эта клетка продолжает жить
+        // если у клетки есть две или три живые соседки, то эта клетка продолжает жить
+        // добавляем найденную клетку в новый набор
         for cell in aliveCells {
             if let count = cellsWithNeighbours.removeValue(forKey: cell), (count == 2 || count == 3) {
                 newCells.insert(cell)
@@ -33,6 +36,7 @@ public final class World {
         }
 
         // в пустой (мёртвой) клетке, с которой соседствуют три живые клетки, зарождается жизнь;
+        // добавляем найденную клетку в новый набор
         for (cell, count) in cellsWithNeighbours {
             guard count == 3 else { continue }
             newCells.insert(cell)
@@ -43,16 +47,20 @@ public final class World {
 
         aliveCells = newCells
     }
-
-    func neighbours(for cell: Cell) -> Set<Cell> {
-        Set(cell.neighbours().filter(isWordContainCell))
+    
+    // Метод для нахождения возможных соседних клеток для заданной клетки
+    func calculateNeighbours(for cell: Cell) -> Set<Cell> {
+        Set(cell.neighbours().filter(isWorldContainCell))
     }
-
-    private func cellsWithNeighbours() -> [Cell: Int] {
+    
+    // Метод вычисления словаря клеток,
+    // у которых есть хотя бы одна соседняя живая клетка
+    // ключ - клетка, значение - количество живых соседних клеток
+    private func calculateCellsWithAliveNeighbours() -> [Cell: Int] {
         var dict: [Cell: Int] = [:]
 
         for cell in aliveCells {
-            for neighbour in neighbours(for: cell) {
+            for neighbour in calculateNeighbours(for: cell) {
                 dict[neighbour, default: 0] += 1
             }
         }
@@ -60,7 +68,7 @@ public final class World {
         return dict
     }
 
-    private func isWordContainCell(_ cell: Cell) -> Bool {
+    private func isWorldContainCell(_ cell: Cell) -> Bool {
         (cell.row >= 0 && cell.row < rows) && (cell.column >= 0 && cell.column < columns)
     }
 }
