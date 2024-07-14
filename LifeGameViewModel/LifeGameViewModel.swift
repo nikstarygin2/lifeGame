@@ -14,7 +14,6 @@ public final class LifeViewModel {
     private let world: World
     private var timer: Timer?
 
-    public var generationCounter = 1
     public var gridData: [[Bool]]?
 
     public func startGame() {
@@ -33,7 +32,6 @@ public final class LifeViewModel {
             newGridData[cell.row][cell.column] = true
         }
         gridData = newGridData
-//        self.generationCounter = world.generationCounter
     }
 
     public func setCells(_ cells: Set<Cell>) {
@@ -45,14 +43,9 @@ public final class LifeViewModel {
         self.gridData = gridData
     }
 
-    public init(rows: Int, columns: Int, isLoopModeEnabled: Bool) {
+    public init(rows: Int, columns: Int) {
         self.rows = rows
         self.columns = columns
-        self.world = World(
-            columns: columns,
-            rows: rows
-//            mode: isLoopModeEnabled ? .loop : .simple
-        )
-//        self.generationCounter = world.generationCounter
+        self.world = World(columns: columns, rows: rows)
     }
 }

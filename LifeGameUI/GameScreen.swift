@@ -12,25 +12,21 @@ public struct GameScreen: View {
     @State private var isAutoGame: Bool
     @State var rowsCount: Int
     @State var columnsCount: Int
-    private let isLoopModeEnabled: Bool
     private let aliveCellsGenerator: LifeGameAliveCellsGenerator
 
     public init(
         rowsCount:Int,
         columnsCount: Int,
         isAutoGame: Bool,
-        isLoopModeEnabled: Bool,
         aliveCellsGenerator: LifeGameAliveCellsGenerator
     ) {
         self.isAutoGame = isAutoGame
         self.rowsCount = rowsCount
         self.columnsCount = columnsCount
         self.aliveCellsGenerator = aliveCellsGenerator
-        self.isLoopModeEnabled = isLoopModeEnabled
         self.viewModel = LifeViewModel(
             rows: rowsCount,
-            columns: columnsCount,
-            isLoopModeEnabled: isLoopModeEnabled
+            columns: columnsCount
         )
     }
 
@@ -38,13 +34,11 @@ public struct GameScreen: View {
         GameView(
             gridData: $viewModel.gridData,
             isAutoGame: $isAutoGame,
-            generationCounter: $viewModel.generationCounter,
             nextGenAction: viewModel.nextGen,
             restartAction: {
                 viewModel = LifeViewModel(
                     rows: rowsCount,
-                    columns: columnsCount,
-                    isLoopModeEnabled: isLoopModeEnabled
+                    columns: columnsCount
                 )
                 aliveCellsGenerator.generate(
                     column: columnsCount,
