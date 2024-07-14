@@ -16,6 +16,7 @@ public struct SettingsScreen: View {
 
     @State private var isGameRunning = false
     @State private var isRandomGame = true
+    @State private var isLoopModeEnabled = false
 
     public init(
         columnsCount: Int,
@@ -116,6 +117,16 @@ public struct SettingsScreen: View {
                         .labelsHidden()
                 }
 
+                Divider()
+
+                HStack {
+                    Text("Endless field")
+                        .font(.headline)
+                    Spacer()
+                    Toggle(isOn: $isLoopModeEnabled) {}
+                        .labelsHidden()
+                }
+
             }.settingsBackground()
 
 
@@ -138,6 +149,7 @@ public struct SettingsScreen: View {
                     rowsCount: rowsCount,
                     columnsCount: columnsCount,
                     isAutoGame: isAutoGame,
+                    isLoopModeEnabled: isLoopModeEnabled,
                     aliveCellsGenerator: aliveCellsGenerator
                 )
             } else {
@@ -145,6 +157,7 @@ public struct SettingsScreen: View {
                     rowsCount: selectedWorld.size,
                     columnsCount: selectedWorld.size,
                     isAutoGame: isAutoGame,
+                    isLoopModeEnabled: isLoopModeEnabled,
                     aliveCellsGenerator: selectedWorld.aliveCellsGenerator
                 )
             }
