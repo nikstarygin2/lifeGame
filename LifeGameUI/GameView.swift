@@ -5,21 +5,30 @@
 import SwiftUI
 
 internal import LifeGameViewModel
+internal import LifeGameUITestsSupport
 
 struct GameView: View {
     @Binding private var gridData: GridData
     @Binding private var isAutoGame: Bool
+    @Binding private var generationCounter: Int
     private let nextGenAction: Action
     private let restartAction: Action
+    private var isGameOver: Bool {
+        !gridData
+            .flatMap { $0 }
+            .reduce(false) { $0 || $1 }
+    }
 
     init(
         gridData: Binding<GridData>,
         isAutoGame: Binding<Bool>,
+        generationCounter: Binding<Int>,
         nextGenAction: @escaping Action,
         restartAction: @escaping Action
     ) {
         _gridData = gridData
         _isAutoGame = isAutoGame
+        _generationCounter = generationCounter
         self.nextGenAction = nextGenAction
         self.restartAction = restartAction
     }
@@ -30,17 +39,34 @@ struct GameView: View {
                 .ignoresSafeArea()
 
             VStack {
+                VStack {
+                    Text("Generation")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+
+                    Text("\(generationCounter)")
+                        .font(.system(size: 50))
+                        .fontWeight(.bold)
+                        .foregroundColor(.blue)
+                }
+                .accessibilityElement(children: .combine)
+                .accessibilityIdentifier(LifeGameA11yIds.Game.generationCounter)
+                .accessibilityValue("\(generationCounter)")
+
                 Spacer()
                 GridView(data: $gridData)
                 Spacer()
                 if !isAutoGame {
                     VStack(spacing: 20) {
                         Button("Next Gen", action: nextGenAction)
-                            .lifeGameUIButton()
+                            .lifeGameUIButton(grayBackground: isGameOver)
+                            .disabled(isGameOver)
+                            .accessibilityIdentifier(LifeGameA11yIds.Game.nextGenButton)
                     }
                 }
                 Button("Restart", action: restartAction)
-                    .lifeGameUIButton()
+                    .lifeGameUIButton(grayBackground: false)
+                    .accessibilityIdentifier(LifeGameA11yIds.Game.restartButton)
                 Spacer()
             }.padding()
         }
@@ -65,6 +91,8 @@ private struct GameOverView: View {
 
 
 private struct LifeGameUIStyle: ViewModifier {
+    let grayBackground: Bool
+
     func body(content: Content) -> some View {
         content
             .font(.headline)
@@ -72,7 +100,9 @@ private struct LifeGameUIStyle: ViewModifier {
             .padding()
             .frame(width: 200, height: 50)
             .background(LinearGradient(
-                gradient: Gradient(colors: [Color.blue, Color.purple]),
+                gradient: Gradient(colors: grayBackground
+                                   ? [Color.gray.opacity(0.7), Color.gray]
+                                   : [Color.blue, Color.purple]),
                 startPoint: .leading,
                 endPoint: .trailing)
             )
@@ -82,8 +112,8 @@ private struct LifeGameUIStyle: ViewModifier {
 }
 
 fileprivate extension View {
-    func lifeGameUIButton() -> some View {
-        modifier(LifeGameUIStyle())
+    func lifeGameUIButton(grayBackground: Bool) -> some View {
+        modifier(LifeGameUIStyle(grayBackground: grayBackground))
     }
 }
 
@@ -100,6 +130,7 @@ fileprivate extension Color {
             [false, false, false],
         ]),
         isAutoGame: .constant(false),
+        generationCounter: .constant(1),
         nextGenAction: {},
         restartAction: {}
     )

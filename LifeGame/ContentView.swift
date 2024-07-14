@@ -8,13 +8,14 @@ import LifeGameUI
 import LifeGameNetworking
 import LifeGameViewModel
 import LifeGameModel
+import LifeGameUITestsSupport
 
 struct ContentView: View {
     var body: some View {
         SettingsScreen(
-            columnsCount: 0,
-            rowsCount: 0,
-            worldGenerator: LifeGameRandomNumberFetcher(),
+            columnsCount: 1,
+            rowsCount: 1,
+            worldGenerator: makeWorldGenerator(),
             isAutoGame: false,
             predefinedWorlds: [
                 PredefinedWorldsItem(
@@ -65,6 +66,16 @@ struct ContentView: View {
             ]
         )
     }
+}
+
+private func makeWorldGenerator() -> LifeGameWorldGenerator {
+#if DEBUG
+    ProcessInfo.uiTestsEnabled
+    ? LifeGameWorldGeneratorUITestsMock()
+    : LifeGameRandomNumberFetcher()
+#else
+    LifeGameRandomNumberFetcher()
+#endif
 }
 
 #Preview {
