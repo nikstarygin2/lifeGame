@@ -7,8 +7,8 @@
 
 import Foundation
 
-public import LifeGameViewModel
-public import LifeGameModel
+import LifeGameViewModel
+import LifeGameModel
 
 public final class LifeGameWorldGeneratorUITestsMock: LifeGameWorldGenerator {
     public init() {}

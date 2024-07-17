@@ -4,7 +4,7 @@
 
 import SwiftUI
 
-public import LifeGameViewModel
+import LifeGameViewModel
 import LifeGameModel
 
 public struct GameScreen: View {

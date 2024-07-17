@@ -4,9 +4,9 @@
 
 import SwiftUI
 
-public import LifeGameViewModel
+import LifeGameViewModel
 import LifeGameModel
-internal import LifeGameUITestsSupport
+import LifeGameUITestsSupport
 
 public struct SettingsScreen: View {
     @State private var columnsCount: Int

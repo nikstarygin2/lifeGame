@@ -4,8 +4,8 @@
 
 import SwiftUI
 
-internal import LifeGameViewModel
-internal import LifeGameUITestsSupport
+import LifeGameViewModel
+import LifeGameUITestsSupport
 
 struct GameView: View {
     @Binding private var gridData: GridData
